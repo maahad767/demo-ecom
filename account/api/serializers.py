@@ -5,6 +5,9 @@ from django.contrib.auth.password_validation import validate_password
 
 
 class RegisterSerializer(serializers.ModelSerializer):
+    """
+    This serializer will be used with Registration View
+    """
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=get_user_model().objects.all())]
@@ -25,6 +28,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         }
 
     def validate(self, attrs):
+        """ Validates if the passwords matches """
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError(
                 {"password": "Password fields didn't match."})
@@ -47,6 +51,10 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+    """
+    This serializer will be used to serialize Profile and Update Profile
+
+    """
     password = serializers.CharField(write_only=True, required=True)
 
     class Meta:
