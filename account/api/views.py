@@ -5,12 +5,14 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 
 
 class RegisterView(generics.CreateAPIView):
+    """View for registering new user"""
     queryset = get_user_model().objects.all()
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
 
 
 class ProfileView(generics.RetrieveAPIView):
+    """View for getting account information"""
     permission_classes = (IsAuthenticated,)
     serializer_class = ProfileSerializer
 
@@ -19,6 +21,7 @@ class ProfileView(generics.RetrieveAPIView):
 
 
 class ProfileUpdateView(generics.UpdateAPIView):
+    """View for updating(PUT) account information """
     permission_classes = (IsAuthenticated,)
     serializer_class = ProfileSerializer
 

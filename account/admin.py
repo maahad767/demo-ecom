@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 
 @admin.register(get_user_model())
 class UserAdmin(DjangoUserAdmin):
-    """Define admin panel design for custom User model with no email field."""
+    """Define admin panel design for custom User model with no username field."""
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name')}),
