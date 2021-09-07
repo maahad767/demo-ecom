@@ -11,6 +11,14 @@ from .serializers import CategorySerializer, ProductSerializer, SellProductSeria
 from .filters import BrowseProductFilter
 
 
+class CategoryListView(ListAPIView):
+    serializer_class = CategorySerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Category.objects.all()
+
+
 class ProductCreateView(CreateAPIView):
     serializer_class = ProductSerializer
     permission_classes = [IsAuthenticated]
@@ -101,4 +109,4 @@ class ProductBorrowedListView(ListAPIView):
     serializer_class = ProductSerializer
 
     def get_queryset(self):
-        return Product.objects.filter(is_sold=True, is_rented=False).filter(lent__borrower=self.request.user)
+        return Product.objects.filter(is_sold=False, is_rented=True).filter(lent__borrower=self.request.user)

@@ -1,11 +1,12 @@
 from django.urls import path, include
 
-from .views import (BrowseProductView, ProductBorrowedListView, ProductBoughtListView, ProductCreateView, ProductLentListView, ProductSoldListView, ProductUpdateView, ProductListView,
+from .views import (BrowseProductView, CategoryListView, ProductBorrowedListView, ProductBoughtListView, ProductCreateView, ProductLentListView, ProductSoldListView, ProductUpdateView, ProductListView,
                     ProductDeleteView, SingleProductRetrieveView, ProductSellView, ProductRentView)
 
 app_name = 'api'
 urlpatterns = [
     # views for product owner
+    path('list-category/', CategoryListView.as_view()),
     path('create-product/', ProductCreateView.as_view()),
     path('list-product/', ProductListView.as_view()),
     path('get-product/<pk>/', SingleProductRetrieveView.as_view()),

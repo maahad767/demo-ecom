@@ -3,8 +3,6 @@ from django.db.models.signals import post_save
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.utils import timezone
-from rest_framework.fields import CharField, ChoiceField
 
 
 class Category(models.Model):
@@ -16,6 +14,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+        ordering = ['name']
 
 
 class Product(models.Model):
