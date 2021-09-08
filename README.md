@@ -15,14 +15,18 @@ Create virtual environment for the project. You can follow bellow instructions t
 For Linux: <br>
 <code>
 pip install virtualenv <br>
+  
 virtualenv .env <br>
+  
 source .env/bin/activate
 </code>
 
 For Windows(powershell): <br>
 <code>
 pip install virtualenv <br>
+  
 virtualenv .env <br>
+
 source .env/Scripts/Activate.ps1
 </code>
 
@@ -30,7 +34,9 @@ source .env/Scripts/Activate.ps1
 For Windows(Command Prompt, run as Administrator): <br>
 <code>
 pip install virtualenv <br>
+  
 virtualenv .env <br>
+  
 source .env/Scripts/activate
 </code>
 
@@ -42,6 +48,7 @@ If you get errors related to python versions, please consider using python3 inst
 
 <code>
 python manage.py migrate <br>
+  
 python manage.py runserver
 </code>
 
