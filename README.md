@@ -12,33 +12,25 @@ Django: 3.2
 ### Create & Activate Virtual Environment
 Create virtual environment for the project. You can follow bellow instructions to install, create and activate virtual environment.
 
-For Linux: <br>
-<code>
-pip install virtualenv <br>
-  
-virtualenv .env <br>
-  
-source .env/bin/activate
-</code>
+For Linux: 
 
-For Windows(powershell): <br>
-<code>
-pip install virtualenv <br>
-  
-virtualenv .env <br>
+`pip install virtualenv`
 
-source .env/Scripts/Activate.ps1
-</code>
+`virtualenv .env`
 
+`source .env/bin/activate`
 
-For Windows(Command Prompt, run as Administrator): <br>
-<code>
-pip install virtualenv <br>
-  
-virtualenv .env <br>
-  
-source .env/Scripts/activate
-</code>
+For Windows(powershell): 
+
+`python -m venv .env`
+
+`.env/Scripts/Activate.ps1`
+
+For Windows(Command Prompt, run as Administrator):
+
+`python -m venv .env `
+
+`.env/Scripts/activate`
 
 ### Install dependencies
 `pip install -r requirements.txt`
